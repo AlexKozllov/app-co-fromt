@@ -1,6 +1,8 @@
 const routers = {
-  main: "/",
-  info: "/info",
+  main: '/',
+  userStatistics: '/userStatistics',
+  userStatisticsName: '/userStatistics:name',
+  info: '/info',
 };
 
 export default routers;
