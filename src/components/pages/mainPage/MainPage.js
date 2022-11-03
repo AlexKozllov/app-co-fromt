@@ -1,12 +1,13 @@
-import React from "react";
-
-import { MainPageWrapper } from "./MainPageStyles";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MainPage = () => {
   return (
-    <MainPageWrapper>
-      <h2>Main Page</h2>
-    </MainPageWrapper>
+    <div>
+      <nav>
+        <Link to={'/userStatistics'}>AppCo</Link>
+      </nav>
+    </div>
   );
 };
 
