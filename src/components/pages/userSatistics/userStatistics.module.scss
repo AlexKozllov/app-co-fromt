@@ -1,0 +1,12 @@
+.sectionWrapper {
+  width: 100%;
+  height: calc(100vh - 129px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+
+  .contentWrapper {
+    width: 82%;
+  }
+}

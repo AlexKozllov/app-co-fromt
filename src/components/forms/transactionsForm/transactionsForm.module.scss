@@ -1,0 +1,47 @@
+.formWrapper {
+  width: 441px;
+  height: 48px;
+  margin-top: 60px;
+  .formContainer {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .inputContainer {
+      width: 381px;
+      height: 48px;
+      outline: 1px solid #f1f1f1;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .separator {
+        width: 1px;
+        height: 28px;
+        background: #f1f1f1;
+      }
+
+      .inputSearch {
+        width: 237px;
+        height: 100%;
+        border: none;
+      }
+
+      .selectSearch {
+        width: 142px;
+        height: 100%;
+        border: none;
+      }
+    }
+
+    .inputSubmit {
+      width: 48px;
+      height: 48px;
+      background: #3a80ba;
+      border-radius: 8px;
+    }
+  }
+}
