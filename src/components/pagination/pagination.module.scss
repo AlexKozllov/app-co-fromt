@@ -1,0 +1,44 @@
+.wrapper {
+  width: 344px;
+  margin: 56px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .pageChange {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+
+    .buttonIconInc {
+      width: 20px;
+      height: 20px;
+      stroke: #3a80ba;
+    }
+    .arrowDisabled {
+      stroke: #f1f1f1;
+    }
+    .buttonIconDec {
+      width: 20px;
+      height: 20px;
+      stroke: #3a80ba;
+    }
+  }
+
+  .paginationBtn {
+    width: 272px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .paginationItem {
+      width: 48px;
+      height: 48px;
+      background: none;
+      border: 2px solid #f1f1f1;
+      border-radius: 8px;
+    }
+  }
+}

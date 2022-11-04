@@ -1,5 +1,5 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import { combineReducers } from "redux";
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
 
 import {
   FLUSH,
@@ -8,12 +8,12 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
-} from "redux-persist/es/constants";
+} from 'redux-persist/es/constants';
 
-import { mainReduser } from "./reducers/mainReducer";
+import { mainReduser } from './reducers/mainReducer';
 
 const rootReducer = combineReducers({
-  payMethods: mainReduser,
+  search: mainReduser,
 });
 
 const store = configureStore({
