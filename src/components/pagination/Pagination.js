@@ -1,19 +1,28 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import s from './pagination.module.scss';
 import sprite from '../../sprites/sprite.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectPaginationPage } from '../../redux/actions/mainAction';
 import { v4 as uuidv4 } from 'uuid';
+import { getTransactions } from '../../redux/operations/mainOperations';
 
 const Pagination = () => {
   const dispatch = useDispatch();
+  const search = useSelector((state) => state.search);
+  const { inputValue, paginationPage } = search;
 
   const [pageRange, setPageRange] = useState([1, 2, 3, 4, 5]);
 
   const onHandleSelectPage = (e) => {
+    e.preventDefault();
     const { value } = e.target;
     dispatch(selectPaginationPage(value));
+
+    console.log(paginationPage);
+
+    dispatch(
+      getTransactions(inputValue.searchValue, inputValue.selectValue, value, 14)
+    );
   };
 
   const onHandleDecRange = () => {

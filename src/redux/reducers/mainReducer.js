@@ -1,8 +1,8 @@
 import { combineReducers, createReducer } from '@reduxjs/toolkit';
 import {
-  payMethodsRequest,
-  payMethodsSuccess,
-  payMethodsError,
+  getTransactionsRequest,
+  getTransactionsSuccess,
+  getTransactionsdsError,
   addSearch,
   selectPaginationPage,
 } from '../actions/mainAction';
@@ -25,21 +25,26 @@ const paginationPage = createReducer(initialPagination, {
   [selectPaginationPage]: (_, { payload }) => payload,
 });
 
+const taransactions = createReducer(false, {
+  [getTransactionsSuccess]: (_, { payload }) => ({ ...payload }),
+});
+
 const loading = createReducer(false, {
-  [payMethodsRequest]: () => true,
-  [payMethodsSuccess]: () => false,
-  [payMethodsError]: () => false,
+  [getTransactionsRequest]: () => true,
+  [getTransactionsSuccess]: () => false,
+  [getTransactionsdsError]: () => false,
 });
 
 const error = createReducer(null, {
-  [payMethodsError]: (_, { payload }) => payload,
-  [payMethodsRequest]: () => '',
-  [payMethodsSuccess]: () => '',
+  [getTransactionsdsError]: (_, { payload }) => payload,
+  [getTransactionsRequest]: () => '',
+  [getTransactionsSuccess]: () => '',
 });
 
 const mainReduser = combineReducers({
   inputValue,
   paginationPage,
+  taransactions,
   error,
   loading,
 });

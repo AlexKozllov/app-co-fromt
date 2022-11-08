@@ -1,19 +1,21 @@
-import { getMethods } from "../../servises/reqToApi";
+import { searchTransactions } from '../../servises/reqToApi';
 import {
-  payMethodsRequest,
-  payMethodsSuccess,
-  payMethodsError,
-} from "../actions/mainAction";
+  getTransactionsRequest,
+  getTransactionsSuccess,
+  getTransactionsdsError,
+} from '../actions/mainAction';
 
-const getPayMethods = () => async (dispatch) => {
-  dispatch(payMethodsRequest());
-  try {
-    const methods = await getMethods();
+const getTransactions =
+  (...queryParams) =>
+  async (dispatch) => {
+    dispatch(getTransactionsRequest());
+    try {
+      const methods = await searchTransactions(...queryParams);
 
-    dispatch(payMethodsSuccess(methods));
-  } catch (error) {
-    dispatch(payMethodsError(error));
-  }
-};
+      dispatch(getTransactionsSuccess(methods));
+    } catch (error) {
+      dispatch(getTransactionsdsError(error));
+    }
+  };
 
-export { getPayMethods };
+export { getTransactions };
