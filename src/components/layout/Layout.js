@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 
-import s from "./Layout.module.scss";
+import s from './Layout.module.scss';
 
 const Layout = ({ children }) => {
   return (
@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       <header>{<Header />}</header>
 
       <main className={s.container}> {children}</main>
-      <footer>{<Footer />}</footer>
+      <footer lassName={s.fuuterWrappwr}>{<Footer />}</footer>
     </div>
   );
 };
