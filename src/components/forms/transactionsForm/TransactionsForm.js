@@ -1,21 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSearch } from '../../../redux/actions/mainAction';
-
+import { getTransactions } from '../../../redux/operations/mainOperations';
+import sprite from '../../../sprites/sprite.svg';
 import s from './transactionsForm.module.scss';
 
 const TransactionsForm = () => {
   const search = useSelector((state) => state.search);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getTransactions('', '', 1, 14));
+  }, []);
+
   const onHandleChange = (e) => {
     const { name, value } = e.target;
     dispatch(addSearch({ name, value }));
   };
 
+  const onHandleSearch = (e) => {
+    const { inputValue, paginationPage } = search;
+    e.preventDefault();
+
+    dispatch(
+      getTransactions(
+        inputValue.searchValue,
+        inputValue.selectValue,
+        paginationPage,
+        14
+      )
+    );
+  };
+
   return (
     <div className={s.formWrapper}>
-      <form className={s.formContainer}>
+      <form className={s.formContainer} onSubmit={onHandleSearch}>
         <div className={s.inputContainer}>
           <input
             type="text"
@@ -30,13 +49,20 @@ const TransactionsForm = () => {
             name="selectValue"
             className={s.selectSearch}
             onChange={onHandleChange}
+            defaultValue={'blockNumber'}
           >
-            <option value="value1">Recipient/sender address</option>
-            <option value="value2">Transaction id</option>
-            <option value="value3">Block number</option>
+            <option value="senderAdress">Sender address</option>
+            <option value="recipAdress">Recipient address</option>
+            <option value="transactionId">Transaction id</option>
+            <option value="blockNumber">Block number</option>
           </select>
         </div>
-        <input type="submit" value="Отправить" className={s.inputSubmit} />
+        <div className={s.search}>
+          <input type="submit" value="" className={s.inputSubmit}></input>
+          <svg className={s.searchIcon}>
+            <use href={sprite + '#loupe_icon'} />
+          </svg>
+        </div>
       </form>
     </div>
   );

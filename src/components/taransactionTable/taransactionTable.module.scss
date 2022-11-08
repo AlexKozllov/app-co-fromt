@@ -1,10 +1,28 @@
 .tableWrapper {
+  // width: 1180px;
+  // max-width: 1180px;
   width: 100%;
   margin-top: 16px;
+  table-layout: fixed;
 
   & thead {
     height: 48px;
     background: #3a80ba;
+
+    color: #ffffff;
+    th {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      @media (max-width: 767px) {
+        font-size: 10px;
+      }
+      @media (max-width: 424px) {
+        font-size: 7px;
+      }
+    }
   }
 
   & tr:first-child th:first-child {
@@ -25,7 +43,53 @@
 
   tbody tr {
     height: 32px;
+    margin: 0, auto;
+    text-align: center;
+    @media (max-width: 767px) {
+      height: 25px;
+    }
   }
+
+  tbody td div a {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    text-decoration-line: underline;
+
+    color: #3a80ba;
+    @media (max-width: 767px) {
+      font-size: 10px;
+    }
+    @media (max-width: 424px) {
+      font-size: 7px;
+    }
+  }
+
+  .dots {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: calc(100% - 10px);
+    text-overflow: ellipsis;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #1a1a1a;
+    @media (max-width: 767px) {
+      font-size: 10px;
+    }
+    @media (max-width: 424px) {
+      font-size: 7px;
+    }
+  }
+
   tbody tr:nth-child(odd) {
     background-color: #fbfbfb;
   }
