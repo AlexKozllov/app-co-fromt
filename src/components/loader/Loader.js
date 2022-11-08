@@ -6,7 +6,6 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { Grid } from 'react-loader-spinner/dist/loader/Grid';
 
 const Loader = ({ visible }) => {
-  console.log(visible);
   return (
     <div className={s.modalLoader}>
       <div className={s.loader}>
