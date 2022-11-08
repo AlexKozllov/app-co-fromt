@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       <header>{<Header />}</header>
 
       <main className={s.container}> {children}</main>
-      <footer lassName={s.fuuterWrappwr}>{<Footer />}</footer>
+      <footer className={s.fuuterWrappwr}>{<Footer />}</footer>
     </div>
   );
 };
