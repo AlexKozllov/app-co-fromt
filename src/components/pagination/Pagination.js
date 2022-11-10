@@ -30,7 +30,7 @@ const Pagination = () => {
         14
       )
     );
-  }, [paginationPage]);
+  }, [paginationPage, dispatch]);
 
   const onHandleSelectPage = (e) => {
     e.preventDefault();

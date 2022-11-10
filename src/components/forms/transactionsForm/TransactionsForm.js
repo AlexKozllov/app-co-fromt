@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addSearch } from '../../../redux/actions/mainAction';
+import {
+  addSearch,
+  selectPaginationPage,
+} from '../../../redux/actions/mainAction';
 import { getTransactions } from '../../../redux/operations/mainOperations';
 import sprite from '../../../sprites/sprite.svg';
 import s from './transactionsForm.module.scss';
@@ -11,7 +14,7 @@ const TransactionsForm = () => {
 
   useEffect(() => {
     dispatch(getTransactions('', '', 1, 14));
-  }, []);
+  }, [dispatch]);
 
   const onHandleChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +33,7 @@ const TransactionsForm = () => {
         14
       )
     );
+    dispatch(selectPaginationPage(1));
   };
 
   return (
@@ -40,7 +44,7 @@ const TransactionsForm = () => {
             type="text"
             name="searchValue"
             className={s.inputSearch}
-            value={search.inputValue.search}
+            value={search.inputValue.searchValue}
             placeholder="Search..."
             onChange={onHandleChange}
           />
@@ -49,8 +53,9 @@ const TransactionsForm = () => {
             name="selectValue"
             className={s.selectSearch}
             onChange={onHandleChange}
-            defaultValue={'blockNumber'}
+            value={search.inputValue.selectValue}
           >
+            <option value="">Show All</option>
             <option value="senderAdress">Sender address</option>
             <option value="recipAdress">Recipient address</option>
             <option value="transactionId">Transaction id</option>
