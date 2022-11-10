@@ -3,7 +3,6 @@ import s from './pagination.module.scss';
 import sprite from '../../sprites/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPaginationPage } from '../../redux/actions/mainAction';
-import { v4 as uuidv4 } from 'uuid';
 import { getTransactions } from '../../redux/operations/mainOperations';
 
 const Pagination = () => {
@@ -13,16 +12,21 @@ const Pagination = () => {
 
   const [pageRange, setPageRange] = useState([1, 2, 3, 4, 5]);
 
+  useEffect(() => {
+    dispatch(
+      getTransactions(
+        inputValue.searchValue,
+        inputValue.selectValue,
+        paginationPage,
+        14
+      )
+    );
+  }, [paginationPage]);
+
   const onHandleSelectPage = (e) => {
     e.preventDefault();
     const { value } = e.target;
     dispatch(selectPaginationPage(value));
-
-    console.log(paginationPage);
-
-    dispatch(
-      getTransactions(inputValue.searchValue, inputValue.selectValue, value, 14)
-    );
   };
 
   const onHandleDecRange = () => {
