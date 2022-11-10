@@ -63,7 +63,7 @@ const Pagination = () => {
       <button type="button" className={s.pageChange} onClick={onHandleDecRange}>
         <svg
           className={`${s.buttonIconInc} ${
-            +paginationPage === 1 && s.arrowDisabled
+            pageRange[0] < 2 && s.arrowDisabled
           }`}
         >
           <use href={sprite + '#Line10'} />
