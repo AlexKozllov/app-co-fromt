@@ -25,7 +25,7 @@ const paginationPage = createReducer(initialPagination, {
   [selectPaginationPage]: (_, { payload }) => payload,
 });
 
-const taransactions = createReducer(false, {
+const taransactions = createReducer([], {
   [getTransactionsSuccess]: (_, { payload }) => ({ ...payload }),
 });
 
@@ -35,10 +35,10 @@ const loading = createReducer(false, {
   [getTransactionsdsError]: () => false,
 });
 
-const error = createReducer(null, {
-  [getTransactionsdsError]: (_, { payload }) => payload,
-  [getTransactionsRequest]: () => '',
-  [getTransactionsSuccess]: () => '',
+const error = createReducer(false, {
+  [getTransactionsdsError]: (_, { payload }) => ({ ...payload }),
+  [getTransactionsRequest]: () => false,
+  [getTransactionsSuccess]: () => false,
 });
 
 const mainReduser = combineReducers({
