@@ -6,8 +6,6 @@ import './App.scss';
 import Layout from './layout/Layout';
 import Loader from './loader/Loader';
 
-// import UserStatistics from "./pages/userSatistics/UserStatistics";
-
 function App() {
   return (
     <div>

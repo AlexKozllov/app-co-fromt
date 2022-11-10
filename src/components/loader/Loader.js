@@ -1,7 +1,5 @@
 import React from 'react';
 import s from './Loader.module.scss';
-
-import Spinner from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { Grid } from 'react-loader-spinner/dist/loader/Grid';
 

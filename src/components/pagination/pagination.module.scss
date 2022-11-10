@@ -25,13 +25,13 @@
       height: 20px;
       stroke: #3a80ba;
     }
-    .arrowDisabled {
-      stroke: #f1f1f1;
-    }
     .buttonIconDec {
       width: 20px;
       height: 20px;
       stroke: #3a80ba;
+    }
+    .arrowDisabled {
+      stroke: #f1f1f1;
     }
   }
 
@@ -75,8 +75,11 @@
         height: 20px;
       }
       &:focus {
-        background: #3a80ba;
+        // background: #3a80ba;
       }
+    }
+    .btnActive {
+      background: #3a80ba;
     }
   }
 }
