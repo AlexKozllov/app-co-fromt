@@ -1,5 +1,5 @@
 .sectionWrapper {
-  width: 100%;
+  max-width: 1440px;
   height: calc(100vh - 129px);
   display: flex;
   flex-direction: row;
@@ -7,7 +7,16 @@
   align-items: flex-start;
 
   .contentWrapper {
-    width: 82%;
-    display: block;
+    width: 100vw;
+    padding-left: 26px;
+    padding-right: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .container {
+      max-width: 1180px;
+      overflow-x: clip;
+    }
   }
 }
