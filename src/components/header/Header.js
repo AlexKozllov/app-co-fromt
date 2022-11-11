@@ -6,11 +6,13 @@ const Header = () => {
   return (
     <div className={s.headerWrapper}>
       <div className={s.contentWrapper}>
-        <h1 className={s.logoWrapper}>
-          <Link to={'/'} className={s.headerLogo}>
-            AppCo
-          </Link>
-        </h1>
+        <div className={s.logoWrapper}>
+          <h1>
+            <Link to={'/'} className={s.headerLogo}>
+              AppCo
+            </Link>
+          </h1>
+        </div>
       </div>
     </div>
   );

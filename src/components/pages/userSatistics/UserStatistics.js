@@ -13,11 +13,13 @@ const UserStatistics = () => {
   return (
     <section className={s.sectionWrapper}>
       <div className={s.contentWrapper}>
-        {visible ? <Loader visible={visible} /> : ''}
-        <TransactionsForm />
-        <TaransactionTable />
-        <div>
-          <Pagination />
+        <div className={s.container}>
+          {visible ? <Loader visible={visible} /> : ''}
+          <TransactionsForm />
+          <TaransactionTable />
+          <div>
+            <Pagination />
+          </div>
         </div>
       </div>
     </section>

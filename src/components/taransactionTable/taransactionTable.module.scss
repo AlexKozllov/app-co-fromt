@@ -1,21 +1,63 @@
-.tableWrapper {
-  // width: 1180px;
-  // max-width: 1180px;
-  width: 100%;
-  margin-top: 16px;
-  table-layout: fixed;
+.stableResponsive {
+  width: 98vw;
+  display: block;
+  overflow-x: auto;
 
-  & thead {
-    height: 48px;
-    background: #3a80ba;
+  .tableWrapper {
+    width: 1180px;
+    margin-top: 16px;
 
-    color: #ffffff;
-    th {
+    & thead {
+      height: 48px;
+      background: #3a80ba;
+
+      color: #ffffff;
+      th {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: left;
+        padding-left: 10px;
+      }
+    }
+
+    & tr:first-child th:first-child {
+      border-top-left-radius: 10px;
+    }
+
+    & tr:first-child th:last-child {
+      border-top-right-radius: 10px;
+    }
+
+    & tr:last-child td:first-child {
+      border-bottom-left-radius: 10px;
+    }
+
+    & tr:last-child td:last-child {
+      border-bottom-right-radius: 10px;
+    }
+
+    tbody tr {
+      height: 32px;
+      margin: 0, auto;
+      text-align: center;
+      @media (max-width: 767px) {
+        height: 25px;
+      }
+    }
+
+    tbody td div a {
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 14px;
+      line-height: 17px;
+
+      text-decoration-line: underline;
+
+      color: #3a80ba;
       @media (max-width: 767px) {
         font-size: 10px;
       }
@@ -23,78 +65,26 @@
         font-size: 7px;
       }
     }
-  }
 
-  & tr:first-child th:first-child {
-    border-top-left-radius: 10px;
-  }
-
-  & tr:first-child th:last-child {
-    border-top-right-radius: 10px;
-  }
-
-  & tr:last-child td:first-child {
-    border-bottom-left-radius: 10px;
-  }
-
-  & tr:last-child td:last-child {
-    border-bottom-right-radius: 10px;
-  }
-
-  tbody tr {
-    height: 32px;
-    margin: 0, auto;
-    text-align: center;
-    @media (max-width: 767px) {
-      height: 25px;
+    .dots {
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: calc(100% - 10px);
+      text-overflow: ellipsis;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #1a1a1a;
     }
-  }
 
-  tbody td div a {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-    text-decoration-line: underline;
-
-    color: #3a80ba;
-    @media (max-width: 767px) {
-      font-size: 10px;
+    tbody tr:nth-child(odd) {
+      background-color: #fbfbfb;
     }
-    @media (max-width: 424px) {
-      font-size: 7px;
+
+    tbody tr:nth-child(even) {
+      background-color: #f1f1f1;
     }
-  }
-
-  .dots {
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: calc(100% - 10px);
-    text-overflow: ellipsis;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-    color: #1a1a1a;
-    @media (max-width: 767px) {
-      font-size: 10px;
-    }
-    @media (max-width: 424px) {
-      font-size: 7px;
-    }
-  }
-
-  tbody tr:nth-child(odd) {
-    background-color: #fbfbfb;
-  }
-
-  tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
   }
 }
