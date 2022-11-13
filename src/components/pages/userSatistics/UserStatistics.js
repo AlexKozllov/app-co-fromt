@@ -9,6 +9,14 @@ import s from './userStatistics.module.scss';
 
 const UserStatistics = () => {
   const visible = useSelector((state) => state.search.loading);
+  const taransactions = useSelector((state) =>
+    state.search &&
+    state.search.taransactions &&
+    state.search.taransactions.data &&
+    state.search.taransactions.data.transactions
+      ? state.search.taransactions.data.transactions
+      : []
+  );
 
   return (
     <section className={s.sectionWrapper}>
@@ -17,9 +25,7 @@ const UserStatistics = () => {
           {visible ? <Loader visible={visible} /> : ''}
           <TransactionsForm />
           <TaransactionTable />
-          <div>
-            <Pagination />
-          </div>
+          <div>{taransactions.length !== 0 && <Pagination />}</div>
         </div>
       </div>
     </section>
