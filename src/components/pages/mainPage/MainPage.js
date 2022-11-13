@@ -7,7 +7,7 @@ const MainPage = () => {
     <div>
       <nav className={s.navigation}>
         <Link to={'/userStatistics'} className={s.userStatistics}>
-          Go to UserStatistics
+          Go to User Statistics
         </Link>
       </nav>
     </div>
