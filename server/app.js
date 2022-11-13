@@ -21,7 +21,7 @@ app.use('/api/getAllTransactions', getAllTransactions);
 
 app.use(express.static(path.join(__dirname, '..', '/build/')));
 
-app.use('*', (req, res) => {
+app.use('/', (req, res) => {
   let indexHTML = fs.readFileSync(path.join(__dirname, '../build/index.html'), {
     encoding: 'utf8',
   });
