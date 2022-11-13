@@ -13,11 +13,9 @@ const getTransactions = async (lastBlockNumber, endBlockNumber) => {
 
   for (let i = lastBlockNumber; i > endBlockNumber; i--) {
     const currentBlock = await getBlockByNumber(decToHex(i));
-    // console.log(currentBlock);
 
     await Promise.all(
       currentBlock.transactions.map(async (item) => {
-        // console.log(item);
         if (item.to) {
           try {
             await TransactionsModel.create({
